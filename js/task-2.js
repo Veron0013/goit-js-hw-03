@@ -1,5 +1,18 @@
 function makeArray(firstArray, secondArray, maxLength) {
 
+	let arr = [...firstArray, ...secondArray];
+
+	if (maxLength > 0) {
+		for (let i = arr.length; i > maxLength; i--) {
+			arr.pop();
+		}
+	} else {
+		arr.length = 0;
+	}
+
+	//arr.length = Math.min(arr.length, maxLength);
+
+	return arr;
 }
 
 console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
